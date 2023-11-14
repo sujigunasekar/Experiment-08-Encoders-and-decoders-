@@ -60,37 +60,66 @@ D7 = X Y Z
 
 
 ### PROGRAM 
-/*
+```
 Program for Endocers and Decoders  and verify its truth table in quartus using Verilog programming.
-Developed by: 
-RegisterNumber:  
-*/
+Developed by: Suji.G
+RegisterNumber: 212222230152 
+## Encoder:
 
+module encoder(a0,a1,a2,y0,y1,y2,y3,y4,y5,y6,y7);
+input y0,y1,y2,y3,y4,y5,y6,y7;
+output a0,a1,a2;
+or(a0,y7,y5,y3,y1);
+or(a1,y7,y6,y3,y2);
+or(a2,y7,y6,y5,y4);
+endmodule
 
+### decoder
+module decoder(a0,a1,a2,y0,y1,y2,y3,y4,y5,y6,y7);
+input a0,a1,a2;
+output y0,y1,y2,y3,y4,y5,y6,y7;
+wire a0bar,a1bar,a2bar;
+not(a0bar,a0);
+not(a1bar,a1);
+not(a2bar,a2);
+and(y0,a0bar,a1bar,a2bar);
+and(y1,a0,a1bar,a2bar);
+and(y2,a0bar,a1,a2bar);
+and(y3,a0,a1,a2bar);
+and(y4,a0bar,a1bar,a2);
+and(y5,a0,a1bar,a2);
+and(y6,a0bar,a1,a2);
+and(y7,a0,a1,a2);
+endmodule
 
-
-
+```
 
 ### RTL LOGIC  
+## Encoder-
 
+![281607184-91aaa217-95a8-4f94-8101-388c0fe1d27d](https://github.com/sujigunasekar/Experiment-08-Encoders-and-decoders-/assets/119559822/cf6afe83-87c1-4801-8610-92dbd513b241)
 
+## Decoder-
 
-
-
-
-
+![281610805-4c90f4a0-d878-451b-b477-f7833e186af2](https://github.com/sujigunasekar/Experiment-08-Encoders-and-decoders-/assets/119559822/e0f4ec04-f2f6-4bf2-9eec-766555b76a2a)
 
 ### TIMING DIGRAMS  
+## Encoder-
 
+![281607675-70bbd264-db31-4168-a6bf-26bab1e57d4e](https://github.com/sujigunasekar/Experiment-08-Encoders-and-decoders-/assets/119559822/7f7c66ec-44ff-41a5-8aa6-a6e44002ce20)
 
+## Decoder-
 
-
+![281612101-a43617b8-1253-4a69-90ee-778cb8b4dd6b](https://github.com/sujigunasekar/Experiment-08-Encoders-and-decoders-/assets/119559822/f8e32890-45b6-431b-9a08-117465f94546)
 
 ### TRUTH TABLE 
+## Encoder-
 
+![281608265-b79ea793-7269-40c7-b667-f4ec965cd5d8](https://github.com/sujigunasekar/Experiment-08-Encoders-and-decoders-/assets/119559822/241a3fab-7a52-46b4-9535-fa6506782838)
 
+## Decoder:
 
-
-
+![281610873-bf5a6369-ab2b-4c83-b91e-84e3c7f6ab22](https://github.com/sujigunasekar/Experiment-08-Encoders-and-decoders-/assets/119559822/61c75f36-e3d5-40dc-a98e-40c59e862611)
 
 ### RESULTS 
+Thus the program to design encoder and decoder is executed successfully .
